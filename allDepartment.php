@@ -1,22 +1,33 @@
-<?php include 'admin_header.php';?>
-<!--All Department starts -->
+<?php include 'admin_header.php';
+require_once '../controllers/department_controller.php';
+$categories = getAllDepartments();
+?>
+<!--All Categories starts -->
 
 <div class="center">
-	<h3 class="text">All Department</h3>
+	<h3 class="text">All Categories</h3>
 	<table class="table table-striped">
 		<thead>
+			<th>Sl#</th>
 			<th> Name</th>
-			<th>ID </th>
+			<th>Product Count </th>
 			<th></th>
 			<th></th>
-			
+
 		</thead>
 		<tbody>
-			
-			<td>Nishat</td>
-			<td>1001</td>
-			<td><a href="editcategory.php" class="btn btn-success">Edit</a></td>
-			<td><a class="btn btn-danger">Delete</td>
+			<?php
+
+			foreach ($categories as $key) {
+						echo '<tr>';
+								echo '<td> '.$key["id"].'</td>';
+								echo '<td> '.$key["name"].'</td>';
+								echo '<td><a href="editcategory.php/?id='.$key["id"] . '" class="btn btn-success" >Edit</a> </td>';
+								echo '<td><a href="deletcategory.php/?id='.$key["id"] . '" class="btn btn-danger" >Delete</a> </td>';
+						echo '</tr>';
+			}
+
+			 ?>
 		</tbody>
 	</table>
 </div>

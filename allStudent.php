@@ -23,7 +23,7 @@
 			<?php
 				foreach($products as $p){
 					echo "<tr>";
-						echo "<td>".$p["namw"]."</td>";
+						echo "<td>".$p["name"]."</td>";
 						echo "<td>".$p["id"]."</td>";
 						echo "<td>".$p["dob"]."</td>";
 						echo "<td>".$p["credit"]."</td>";
